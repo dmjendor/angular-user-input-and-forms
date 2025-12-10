@@ -1,17 +1,25 @@
-<form>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <h2>Login</h2>
 
   <div class="control-row">
     <div class="control no-margin">
       <label for="email">Email</label>
-      <input id="email" type="email" />
+      <input id="email" type="email" [formControl]="loginForm.controls.email" />
     </div>
 
     <div class="control no-margin">
       <label for="password">Password</label>
-      <input id="password" type="password" />
+      <input id="password" type="password" formControlName="password" />
     </div>
 
     <button class="button">Login</button>
   </div>
+  @if(emailIsInvalid){
+  <p>The email you've entered is invalid.</p>
+  } @if(passwordIsInvalid){
+  <p>
+    The password you've entered is invalid, it must be at least six characters,
+    and must contain a question mark.
+  </p>
+  }
 </form>
