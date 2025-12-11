@@ -7,6 +7,6 @@ import { SignupComponent } from './auth/signup/signup.component';
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [LoginComponent, SignupComponent],
+  imports: [SignupComponent],
 })
 export class AppComponent {}
